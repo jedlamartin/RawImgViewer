@@ -32,23 +32,22 @@ void drawDimensionsPopUp(bool& active, int& width, int& height, int& format) {
     static bool heightEditMode = false;
     static bool formatEditMode = false;
 
-    if (GuiValueBox((Rectangle){bounds.x + 80, bounds.y + 40, 120, 30},
+    if (GuiValueBox(Rectangle{bounds.x + 80, bounds.y + 40, 120, 30},
                     "Width:", &width, 1, MAX_IMAGE_DIMENSION, widthEditMode)) {
       widthEditMode = !widthEditMode;
     }
 
-    if (GuiValueBox((Rectangle){bounds.x + 80, bounds.y + 80, 120, 30},
-                    "Height:", &height, 1, MAX_IMAGE_DIMENSION,
-                    heightEditMode)) {
+    if (GuiValueBox(Rectangle{bounds.x + 80, bounds.y + 80, 120, 30}, "Height:",
+                    &height, 1, MAX_IMAGE_DIMENSION, heightEditMode)) {
       heightEditMode = !heightEditMode;
     }
 
-    if (GuiButton((Rectangle){bounds.x + 100, bounds.y + 160, 100, 30},
+    if (GuiButton(Rectangle{bounds.x + 100, bounds.y + 160, 100, 30},
                   "Confirm")) {
       active = false;
     }
 
-    if (GuiDropdownBox((Rectangle){bounds.x + 80, bounds.y + 130, 120, 30},
+    if (GuiDropdownBox(Rectangle{bounds.x + 80, bounds.y + 130, 120, 30},
                        "RGB;RGBA", &format, formatEditMode)) {
       formatEditMode = !formatEditMode;
     }
@@ -62,7 +61,7 @@ Texture2D loadRawTexture(std::vector<unsigned char>& imgData, int width,
                                   : PIXELFORMAT_UNCOMPRESSED_R8G8B8A8;
 
   if (imgData.size() < (size_t)(width * height * bytesPerPixel)) {
-    return (Texture2D){0};
+    return Texture2D{0};
   }
 
   Image img = {.data = imgData.data(),
