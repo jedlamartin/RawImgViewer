@@ -19,7 +19,7 @@ sudo apt install build-essential git cmake libasound2-dev mesa-common-dev libx11
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/YOUR_USERNAME/RawImgViewer.git](https://github.com/jedlamartin/RawImgViewer.git))
+    git clone https://github.com/jedlamartin/RawImgViewer.git
     cd RawImgViewer
     ```
 
