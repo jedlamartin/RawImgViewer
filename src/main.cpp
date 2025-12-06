@@ -25,7 +25,7 @@ int main(int argc, char** argv) {
   }
   path = std::string(argv[1]);
   std::ifstream file;
-  file.open(path);
+  file.open(path, std::ios::binary);
   if (!file.good()) {
     std::cerr << "Could not open the specified file!" << std::endl;
     return -1;
