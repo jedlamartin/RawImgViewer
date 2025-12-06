@@ -1,5 +1,4 @@
 #include <raylib.h>
-#include <unistd.h>
 
 #include <fstream>
 #include <iostream>
