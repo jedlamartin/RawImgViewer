@@ -19,10 +19,10 @@ void drawDimensionsPopUp(bool& active, int& width, int& height, int& format) {
     constexpr int MAX_IMAGE_DIMENSION = 8000;
 
     Rectangle bounds = {
-        .x = static_cast<int>(screenWidth / 2.0 - POPUP_WIDTH / 2.0),
-        .y = static_cast<int>(screenHeight / 2.0 - POPUP_HEIGHT / 2.0),
-        .width = POPUP_WIDTH,
-        .height = POPUP_HEIGHT};
+        .x = static_cast<float>(screenWidth / 2.0 - POPUP_WIDTH / 2.0),
+        .y = static_cast<float>(screenHeight / 2.0 - POPUP_HEIGHT / 2.0),
+        .width = static_cast<float>(POPUP_WIDTH),
+        .height = static_cast<float>(POPUP_HEIGHT)};
 
     if (GuiWindowBox(bounds, "Image Dimensions")) {
       active = false;
